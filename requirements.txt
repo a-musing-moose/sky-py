@@ -1,0 +1,15 @@
+# Testing
+mock==1.0.1
+pytest==2.5.2
+pytest-cache==1.0
+pytest-cov==1.6
+pytest-django==2.6
+pytest-pep8==1.0.5
+pytest-sugar==0.3.3
+
+# Documentation
+Sphinx==1.2.1
+sphinx-rtd-theme==0.1.5
+
+# Release Control
+bumpversion==0.4.0
