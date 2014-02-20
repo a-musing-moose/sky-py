@@ -1,5 +1,5 @@
 test:
-	py.test --pep8 --clearcache -cov sjy tests
+	py.test --pep8 --clearcache --cov sky tests
 
 unit-test:
 	py.test --pep8 --clearcache --cov sky tests/unit
