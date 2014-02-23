@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name='sky',
     version='0.0.1',
-    url='https://github.com/a-musing-moose/sky',
+    url='https://github.com/a-musing-moose/sky-py',
     author="Jonathan Moss",
     author_email="jonathan.moss@tangentsnowball.com.au",
     description="Python client for skydb",
