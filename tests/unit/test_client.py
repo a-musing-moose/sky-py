@@ -151,7 +151,7 @@ class TestSkyClient(TestCase):
         requests.post.assert_called_once_with(
             'http://127.0.0.1:8585/tables/users/properties',
             headers={'content-type': 'application/json'},
-            data='{"transient": false, "name": "age", "data_type": "string", "id": 1}' #NOQA
+            data='{"transient": false, "name": "age", "data_type": "string", "id": 1}'  # NOQA
         )
 
     def test_update_property(self, requests):
@@ -165,7 +165,7 @@ class TestSkyClient(TestCase):
         requests.patch.assert_called_once_with(
             'http://127.0.0.1:8585/tables/users/properties/age',
             headers={'content-type': 'application/json'},
-            data='{"transient": false, "name": "ysb", "data_type": "string", "id": 1}' #NOQA
+            data='{"transient": false, "name": "ysb", "data_type": "string", "id": 1}'  # NOQA
         )
 
     def test_delete_property(self, requests):
@@ -214,7 +214,9 @@ class TestSkyClient(TestCase):
 
         client.get_event(table, 123, self.dt)
         requests.get.assert_called_once_with(
-            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % self.dts, #NOQA
+            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % (
+                self.dts
+            ),
             headers={'content-type': 'application/json'},
             data=None
         )
@@ -226,7 +228,9 @@ class TestSkyClient(TestCase):
         event = resources.Event(timestamp=self.dt)
         client.create_event(table, 123, event)
         requests.put.assert_called_once_with(
-            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % self.dts, #NOQA
+            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % (
+                self.dts
+            ),
             headers={'content-type': 'application/json'},
             data='{"timestamp": "2014-02-21T10:10:23.000203Z", "data": {}}'
         )
@@ -238,7 +242,9 @@ class TestSkyClient(TestCase):
         event = resources.Event(timestamp=self.dt)
         client.create_event(table, 123, event, False)
         requests.patch.assert_called_once_with(
-            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % self.dts, #NOQA
+            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % (
+                self.dts
+            ),
             headers={'content-type': 'application/json'},
             data='{"timestamp": "2014-02-21T10:10:23.000203Z", "data": {}}'
         )
@@ -253,7 +259,9 @@ class TestSkyClient(TestCase):
 
         client.delete_event(table, 123, event)
         requests.delete.assert_called_once_with(
-            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % self.dts, #NOQA
+            'http://127.0.0.1:8585/tables/users/objects/123/events/%s' % (
+                self.dts
+            ),
             headers={'content-type': 'application/json'},
             data=None
         )
@@ -335,4 +343,3 @@ class TestSkyClient(TestCase):
             data=None,
             verify=False
         )
-

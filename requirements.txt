@@ -6,7 +6,7 @@ pytest-cov==1.6
 pytest-django==2.6
 pytest-pep8==1.0.5
 pytest-sugar==0.3.3
-python-coveralls==1.5.2
+python-coveralls==2.4.2
 
 # Documentation
 Sphinx==1.2.1
