@@ -169,7 +169,7 @@ class SkyClient(object):
         url = self.make_url(path)
 
         if data:
-            data = json.dumps(data)
+            data = json.dumps(data, sort_keys=True)
 
         kwargs = {
             'data': data,

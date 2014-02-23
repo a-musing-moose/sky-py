@@ -151,7 +151,7 @@ class TestSkyClient(TestCase):
         requests.post.assert_called_once_with(
             'http://127.0.0.1:8585/tables/users/properties',
             headers={'content-type': 'application/json'},
-            data='{"transient": false, "name": "age", "data_type": "string", "id": 1}'  # NOQA
+            data='{"data_type": "string", "id": 1, "name": "age", "transient": false}'  # NOQA
         )
 
     def test_update_property(self, requests):
@@ -165,7 +165,7 @@ class TestSkyClient(TestCase):
         requests.patch.assert_called_once_with(
             'http://127.0.0.1:8585/tables/users/properties/age',
             headers={'content-type': 'application/json'},
-            data='{"transient": false, "name": "ysb", "data_type": "string", "id": 1}'  # NOQA
+            data='{"data_type": "string", "id": 1, "name": "ysb", "transient": false}'  # NOQA
         )
 
     def test_delete_property(self, requests):
@@ -232,7 +232,7 @@ class TestSkyClient(TestCase):
                 self.dts
             ),
             headers={'content-type': 'application/json'},
-            data='{"timestamp": "2014-02-21T10:10:23.000203Z", "data": {}}'
+            data='{"data": {}, "timestamp": "2014-02-21T10:10:23.000203Z"}'
         )
 
     def test_create_event_without_replace(self, requests):
@@ -246,7 +246,7 @@ class TestSkyClient(TestCase):
                 self.dts
             ),
             headers={'content-type': 'application/json'},
-            data='{"timestamp": "2014-02-21T10:10:23.000203Z", "data": {}}'
+            data='{"data": {}, "timestamp": "2014-02-21T10:10:23.000203Z"}'
         )
 
     def test_delete_event(self, requests):
