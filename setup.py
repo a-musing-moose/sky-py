@@ -13,7 +13,8 @@ setup(
     license='BSD',
     packages=find_packages(exclude=['tests','sandbox']),
     install_requires=[
-        'requests'
+        'requests',
+        'pytz'
     ],
     # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
